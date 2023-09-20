@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class Loginpage extends AppCompatActivity {
 EditText editTextemail,editTextpassword;
-Button submit;
+Button submit,signup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,13 +20,17 @@ Button submit;
         editTextemail=findViewById(R.id.EditTextEmailAddress);
         editTextpassword=findViewById(R.id.editTextTextPassword);
         submit=findViewById(R.id.submitbutton);
+        signup=findViewById(R.id.Login_signup);
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = editTextemail.getText().toString();
                 String password = editTextpassword.getText().toString();
-                Intent intent = new Intent(Loginpage.this, Homepage.class);
+                Intent intent = new Intent(getApplicationContext(), Homepage.class);
+
+
                 if (email.isEmpty()) {
                     Toast.makeText(Loginpage.this, "Please enter your username", Toast.LENGTH_SHORT).show();
                     return;
@@ -36,6 +40,14 @@ Button submit;
                     return;
                 }
                 startActivity(intent);
+            }
+        });
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Login_to_Register = new Intent(Loginpage.this, Register.class);
+                startActivity(Login_to_Register);
             }
         });
 

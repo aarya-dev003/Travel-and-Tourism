@@ -6,25 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToOutline="true"
-    android:background="@drawable/opening"
-    >
+    android:background="@drawable/main_activity_background">
 
-    <Button
-        android:id="@+id/openingbutton"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:clipToOutline="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="5dp"
-        android:backgroundTint="#0B182B"
-        android:text="Get Started"
-        android:textColor="@color/white"
-        android:textSize="20dp"
+    <ImageButton
+        android:id="@+id/mainactivitybutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/white"
+        android:src="@drawable/arrow_forward_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
