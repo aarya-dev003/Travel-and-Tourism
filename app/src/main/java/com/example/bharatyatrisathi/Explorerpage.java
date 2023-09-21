@@ -21,21 +21,24 @@ public class Explorerpage extends AppCompatActivity {
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent Exploreintent = new Intent(getApplicationContext(), Explorerpage.class);
+
                 Intent Profileintent = new Intent(getApplicationContext(), Profile.class);
                 Intent Homeintent = new Intent(getApplicationContext(), Homepage.class);
 
                 int id = item.getItemId();
                 if (id == R.id.home) {
                     startActivity(Homeintent);
+                    return true;
                 }
                 if (id == R.id.explore) {
 
                 }
                 if (id == R.id.profile) {
                     startActivity(Profileintent);
+                    return true;
                 }
-                return true;
+
+                return false;
             }
         });
 

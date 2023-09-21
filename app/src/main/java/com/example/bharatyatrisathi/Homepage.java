@@ -30,7 +30,7 @@ Button plantrip;
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Intent Exploreintent = new Intent(getApplicationContext(), Explorerpage.class);
                 Intent Profileintent = new Intent(getApplicationContext(), Profile.class);
-                Intent Homeintent = new Intent(getApplicationContext(), Homepage.class);
+
 
                 int id = item.getItemId();
                         if (id == R.id.home) {
@@ -38,11 +38,14 @@ Button plantrip;
                         }
                         if (id == R.id.explore) {
                             startActivity(Exploreintent);
+                            return true;
                         }
                         if (id == R.id.profile) {
                             startActivity(Profileintent);
+                            return true;
                         }
-                return true;
+
+                return false;
             }
         });
         plantrip.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +58,6 @@ Button plantrip;
 
 
         chatBot = findViewById(R.id.chatBotButton);
-
         chatBot.setOnClickListener(new View.OnClickListener() {
             Intent toChatBox = new Intent(getApplicationContext(),ChatBotActivity.class);
             @Override
