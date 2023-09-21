@@ -16,7 +16,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/homepagebackground"
+        android:background="@drawable/img_28"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -40,7 +40,7 @@
             android:layout_height="29dp"
             android:layout_marginStart="21dp"
             android:layout_marginTop="13dp"
-            android:text="Namaste Akshat"
+            android:text="Hello Mr.Morgan"
             android:textColor="@color/white"
             android:textSize="15dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +56,7 @@
             android:background="@drawable/curver_without_line"
             android:ems="10"
             android:gravity="start"
+            android:textColor="@color/black"
             android:hint="  SEARCH"
             android:inputType="text"
             android:textCursorDrawable="@color/black"
@@ -169,12 +170,15 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_drawer"
         android:layout_width="333dp"
+
         android:layout_height="78dp"
+        android:background="@drawable/curveshape"
+        app:itemIconTint="@color/black"
+        app:itemRippleColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/curveshape"
         app:menu="@menu/navigation_buttons" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

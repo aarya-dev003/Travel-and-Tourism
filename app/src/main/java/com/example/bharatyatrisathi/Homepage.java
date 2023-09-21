@@ -25,23 +25,22 @@ Button plantrip;
         setContentView(R.layout.activity_homepage);
         plantrip=findViewById(R.id.Homestartplanning);
         navigationView=findViewById(R.id.navigation_drawer);
+        navigationView.setSelectedItemId(R.id.home);
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent Exploreintent = new Intent(getApplicationContext(), Explorerpage.class);
-                Intent Profileintent = new Intent(getApplicationContext(), Profile.class);
-
-
                 int id = item.getItemId();
                         if (id == R.id.home) {
-
+                            return true;
                         }
                         if (id == R.id.explore) {
-                            startActivity(Exploreintent);
+                            Intent intent = new Intent(getApplicationContext(), Explorerpage.class);
+                            startActivity(intent);
                             return true;
                         }
                         if (id == R.id.profile) {
-                            startActivity(Profileintent);
+                            Intent intent = new Intent(getApplicationContext(), Profile.class);
+                            startActivity(intent);
                             return true;
                         }
 
@@ -65,5 +64,8 @@ Button plantrip;
                 startActivity(toChatBox);
             }
         });
+
     }
+
+
 }
