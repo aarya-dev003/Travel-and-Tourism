@@ -1,35 +1,44 @@
 package com.example.bharatyatrisathi;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class Profile extends AppCompatActivity {
-ImageButton Profile_to_explore,Profile_to_home;
+    BottomNavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        navigationView=findViewById(R.id.navigation_drawer);
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent Exploreintent = new Intent(getApplicationContext(), Explorerpage.class);
+                Intent Profileintent = new Intent(getApplicationContext(), Profile.class);
+                Intent Homeintent = new Intent(getApplicationContext(), Homepage.class);
 
-        Profile_to_explore=findViewById(R.id.Profile_to_explore);
-        Profile_to_explore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent Exploreintent=new Intent(getApplicationContext(),Explorerpage.class);
-                startActivity(Exploreintent);
+                int id = item.getItemId();
+                if (id == R.id.home) {
+                    startActivity(Homeintent);
+                }
+                if (id == R.id.explore) {
+                    startActivity(Exploreintent);
+                }
+                if (id == R.id.profile) {
+
+                }
+                return true;
             }
         });
-        Profile_to_home=findViewById(R.id.Profile_to_home);
-        Profile_to_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent Homeintent=new Intent(getApplicationContext(),Homepage.class);
-                startActivity(Homeintent);
-            }
-        });
+
     }
 }

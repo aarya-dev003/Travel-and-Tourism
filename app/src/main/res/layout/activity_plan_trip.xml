@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlanTrip">
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="310dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:text="    Plan your next adventure"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="281dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="65dp"
+        android:background="@drawable/curveshape"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="277dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/curveshape"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextText8"
+        android:layout_width="279dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="355dp"
+        android:background="@drawable/curveshape"
+        android:ems="10"
+        android:inputType="number"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextText9"
+        android:layout_width="276dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="244dp"
+        android:background="@drawable/curveshape"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="267dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:gravity="bottom"
+        android:text=" Where do you want to go?"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="254dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:gravity="bottom"
+        android:text=" When does your trip start?"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="272dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="bottom"
+        android:text=" How many days will your trip be?"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="264dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="bottom"
+        android:text=" How many people are going?"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+
+    <ImageView
+        android:layout_width="44dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/plantripmap_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="413dp"
+        android:layout_height="167dp"
+        android:src="@drawable/plantrip_img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="155dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#0047AB"
+        android:text="Create my Plan"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

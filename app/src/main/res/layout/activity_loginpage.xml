@@ -4,7 +4,7 @@
     android:id="@+id/login_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginbackground"
+    android:background="@drawable/starting_background"
     android:clipToOutline="true" >
 
 
@@ -64,8 +64,8 @@
 
     <Button
         android:id="@+id/submitbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="95dp"
+        android:layout_height="53dp"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="280dp"
@@ -75,5 +75,31 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="187dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="448dp"
+        android:gravity="center"
+        android:text="Already have an account yet?"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Login_signup"
+        android:layout_width="105dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="448dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:text="Sign Up"
+        android:textColor="#0047FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
