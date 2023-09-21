@@ -34,7 +34,7 @@ public class Profile extends AppCompatActivity {
                     startActivity(Exploreintent);
                 }
                 if (id == R.id.profile) {
-                    startActivity(Profileintent);
+
                 }
                 return true;
             }

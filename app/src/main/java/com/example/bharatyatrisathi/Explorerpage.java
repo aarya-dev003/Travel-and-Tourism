@@ -30,7 +30,7 @@ public class Explorerpage extends AppCompatActivity {
                     startActivity(Homeintent);
                 }
                 if (id == R.id.explore) {
-                    startActivity(Exploreintent);
+
                 }
                 if (id == R.id.profile) {
                     startActivity(Profileintent);

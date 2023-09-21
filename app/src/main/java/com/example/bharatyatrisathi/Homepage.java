@@ -11,11 +11,13 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class Homepage extends AppCompatActivity {
 BottomNavigationView navigationView;
 Button plantrip;
+    FloatingActionButton chatBot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ Button plantrip;
 
                 int id = item.getItemId();
                         if (id == R.id.home) {
-                            startActivity(Homeintent);
+
                         }
                         if (id == R.id.explore) {
                             startActivity(Exploreintent);
@@ -52,6 +54,14 @@ Button plantrip;
         });
 
 
+        chatBot = findViewById(R.id.chatBotButton);
 
+        chatBot.setOnClickListener(new View.OnClickListener() {
+            Intent toChatBox = new Intent(getApplicationContext(),ChatBotActivity.class);
+            @Override
+            public void onClick(View v) {
+                startActivity(toChatBox);
+            }
+        });
     }
 }
