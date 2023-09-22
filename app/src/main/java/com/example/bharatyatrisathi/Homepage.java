@@ -43,8 +43,7 @@ Button plantrip;
                             startActivity(intent);
                             return true;
                         }
-
-                return false;
+                        return false;
             }
         });
         plantrip.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +53,6 @@ Button plantrip;
                 startActivity(intent);
             }
         });
-
         chatBot = findViewById(R.id.chatBotButton);
         chatBot.setOnClickListener(new View.OnClickListener() {
             Intent toChatBox = new Intent(getApplicationContext(),ChatBotActivity.class);
