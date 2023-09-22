@@ -21,7 +21,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/navigation_buttons" />
+        app:menu="@menu/navigation_buttons"
+        app:itemIconTint="@color/black"
+        app:itemRippleColor="@color/white"
+        />
 
 
     <de.hdodenhof.circleimageview.CircleImageView

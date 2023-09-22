@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -22,23 +23,23 @@ public class Profile extends AppCompatActivity {
         navigationView=findViewById(R.id.navigation_drawer);
         Fragment fragment =new MapFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,fragment).commit();
+        navigationView.setSelectedItemId(R.id.profile);
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent Exploreintent = new Intent(getApplicationContext(), Explorerpage.class);
-                Intent Homeintent = new Intent(getApplicationContext(), Homepage.class);
-
                 int id = item.getItemId();
                 if (id == R.id.home) {
-                    startActivity(Homeintent);
+                    Intent intent = new Intent(getApplicationContext(), Homepage.class);
+                    startActivity(intent);
                     return true;
                 }
                 if (id == R.id.explore) {
-                    startActivity(Exploreintent);
+                    Intent intent = new Intent(getApplicationContext(), Explorerpage.class);
+                    startActivity(intent);
                     return true;
                 }
                 if (id == R.id.profile) {
-
+                    return true;
                 }
 
                 return false;
@@ -46,4 +47,5 @@ public class Profile extends AppCompatActivity {
         });
 
     }
+
 }
