@@ -71,7 +71,6 @@ public class ChatBotActivity extends AppCompatActivity {
 
         sendButton.setOnClickListener((v) -> {
             String question = messageEditText.getText().toString().trim();
-            Toast.makeText(this, question, Toast.LENGTH_LONG).show();
             addToChat(question, Message.SENT_BY_ME);
             messageEditText.setText("");
             callAPI(question);
@@ -121,7 +120,7 @@ public class ChatBotActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(), JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/chat/completions")
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer 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")
                 .post(body)
                 .build();
 
