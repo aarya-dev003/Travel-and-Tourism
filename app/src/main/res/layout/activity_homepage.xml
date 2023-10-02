@@ -234,12 +234,14 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_drawer"
-        android:layout_width="333dp"
-
+        android:layout_width="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_height="78dp"
         android:background="@drawable/curveshape"
         app:itemIconTint="@color/black"
         app:itemRippleColor="@color/white"
+
         android:layout_marginBottom="5dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
@@ -247,5 +249,6 @@
         android:layout_marginHorizontal="40dp"
         android:foregroundGravity="center"
         app:menu="@menu/navigation_buttons" />
+
 
 </RelativeLayout>

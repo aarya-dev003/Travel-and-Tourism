@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,120 +7,227 @@
     android:background="@color/white"
     tools:context=".Explorerpage">
 
+
     <TextView
+
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+
         android:text="Explore"
         android:textColor="@color/black"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <ImageView
-        android:id="@+id/imageView"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+    <TextView
+        android:textAlignment="center"
         android:layout_width="150dp"
-        android:layout_height="220dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/img_9" />
+        android:layout_height="36dp"
+        android:id="@+id/categories"
+        android:layout_alignTop="@+id/textView2"
+        android:text="Travel Categories"
+        android:layout_marginTop="56dp"
+        android:layout_marginStart="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/blacktextview"
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="149dp"
-        android:layout_height="218dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img_11" />
+/>
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="144dp"
-        android:layout_height="206dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="96dp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation_drawer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/img_14" />
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:layout_height="300dp"
+     android:id="@+id/relView1"
+     android:layout_alignTop="@+id/categories"
+     android:layout_marginTop="32dp"
+     android:layout_marginStart="12dp"
+     android:layout_marginEnd="12dp"
+     >
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="153dp"
-        android:layout_height="214dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="96dp"
-        android:src="@drawable/img_10"
-        app:layout_constraintBottom_toTopOf="@+id/navigation_drawer"
-        app:layout_constraintStart_toStartOf="parent" />
+     <LinearLayout
+         android:id="@+id/explore1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_marginStart="16dp"
+
+         android:layout_marginTop="16dp"
+         android:layout_marginEnd="16dp"
+         android:layout_marginBottom="16dp"
+         android:orientation="vertical">
+
+
+         <ImageView
+             android:id="@+id/imageView"
+             android:layout_width="170dp"
+             android:layout_height="220dp"
+             app:srcCompat="@drawable/img_9" />
+
+         <TextView
+             android:id="@+id/textView3"
+             android:layout_width="103dp"
+             android:layout_height="31dp"
+             android:layout_marginStart="24dp"
+             android:layout_marginTop="4dp"
+             android:text="Ladakh"
+             android:textAlignment="center"
+             android:textColor="@color/black"
+             android:textSize="16sp"
+             android:textStyle="bold" />
+     </LinearLayout>
+
+
+
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentRight="true"
+         android:layout_margin="16dp"
+         android:orientation="vertical"
+
+         >
+
+         <ImageView
+             android:id="@+id/imageView5"
+             android:layout_width="170dp"
+             android:layout_height="220dp"
+
+             app:srcCompat="@drawable/img_14" />
+
+         <TextView
+             android:id="@+id/textView15"
+             android:textAlignment="center"
+             android:textStyle="bold"
+             android:layout_width="103dp"
+             android:layout_height="31dp"
+             android:layout_marginStart="24dp"
+             android:layout_marginTop="4dp"
+             android:layout_marginEnd="36dp"
+             android:textColor="@color/black"
+             android:text="Karnataka"
+             android:textSize="16sp"
+              />
+
+     </LinearLayout>
+
+
+ </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/relView2"
+        android:layout_alignTop="@+id/relView1"
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/explore2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp">
+
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="170dp"
+                android:layout_height="220dp"
+
+                app:srcCompat="@drawable/img_11" />
+            <TextView
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+
+                android:text="Himanchal Pradesh"
+                android:textSize="16dp"
+              />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="16dp"
+            >
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="170dp"
+                android:layout_height="220dp"
+                android:src="@drawable/img_10" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+                android:text="Jammu and kashmir"
+                android:textSize="16sp"
+                 />
+
+
+
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_drawer"
-        android:layout_width="333dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_height="78dp"
-        android:layout_marginBottom="1dp"
         android:background="@drawable/curveshape"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/navigation_buttons"
-        app:itemRippleColor="@color/white"
         app:itemIconTint="@color/black"
+        app:itemRippleColor="@color/white"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="40dp"
+        android:foregroundGravity="center"
 
+        app:menu="@menu/navigation_buttons"
         />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="103dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
-        android:textColor="@color/black"
-        android:text="  Ladakh"
-        android:textSize="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <TextView
-        android:layout_width="130dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/black"
-        android:text="Himanchal Pradesh"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="148dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
-        android:textColor="@color/black"
-        android:text="Jammu and kashmir"
-        android:textSize="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="108dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="36dp"
-        android:textColor="@color/black"
-        android:text="Karnatak"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
