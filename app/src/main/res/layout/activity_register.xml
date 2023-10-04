@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,100 +7,102 @@
     tools:context=".Register"
     android:background="@drawable/starting_background">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="174dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="125dp"
-        android:gravity="center"
-        android:text="Register"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_marginTop="120dp"
+       android:padding="24dp"
+       >
 
-    <EditText
-        android:id="@+id/editTextText4"
-        android:layout_width="208dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="248dp"
-        android:layout_marginEnd="100dp"
-        android:background="@drawable/curver_without_line"
-        android:ems="10"
-        android:hint="Full name"
-        android:inputType="text"
-        android:textColorHint="#CABCA8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+       <TextView
+           android:padding="8dp"
+           android:id="@+id/textView4"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
 
-    <EditText
-        android:id="@+id/editTextText5"
-        android:layout_width="208dp"
-        android:layout_height="46dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="337dp"
-        android:layout_marginEnd="100dp"
-        android:background="@drawable/curver_without_line"
-        android:hint="DD/MM/YYYY"
-        android:inputType="text"
-        android:textColorHint="#CABCA8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+           android:layout_marginTop="16dp"
+         android:layout_gravity="center"
+           android:text="Sign Up"
+           android:textColor="@color/black"
+           android:textSize="32dp"
+           android:textStyle="bold"
+            />
 
-    <EditText
-        android:id="@+id/editTextText6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="422dp"
-        android:layout_marginEnd="100dp"
-        android:background="@drawable/curver_without_line"
-        android:ems="10"
-        android:hint="USERNAME"
-        android:inputType="text"
-        android:textColorHint="#CABCA8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+       <EditText
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="104dp"
-        android:backgroundTint="#79B13D"
-        android:text="SIGN UP"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+           android:layout_marginStart="32dp"
+           android:layout_marginEnd="32dp"
+           android:layout_marginTop="24dp"
+           android:id="@+id/editTextText4"
+           android:layout_width="match_parent"
+           android:layout_height="48dp"
 
-    <EditText
-        android:id="@+id/editTextText7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="504dp"
-        android:layout_marginEnd="100dp"
-        android:background="@drawable/curver_without_line"
-        android:ems="10"
-        android:hint="PASSWORD"
-        android:inputType="text"
-        android:textColorHint="#CABCA8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+           android:background="@drawable/curver_without_line"
+           android:ems="10"
+           android:hint="Full name"
+           android:inputType="text"
+           android:textColorHint="#CABCA8"
+        />
+       <EditText
+           android:layout_marginStart="32dp"
+           android:layout_marginEnd="32dp"
+           android:layout_marginTop="24dp"
+           android:id="@+id/editTextText5"
+           android:layout_width="match_parent"
+           android:layout_height="48dp"
+           android:background="@drawable/curver_without_line"
+           android:hint="Email / Phone"
+           android:inputType="textEmailAddress"
+           android:textColorHint="#CABCA8"
+            />
+
+       <EditText
+           android:layout_marginStart="32dp"
+           android:layout_marginEnd="32dp"
+           android:layout_marginTop="24dp"
+           android:id="@+id/editTextText6"
+           android:layout_width="match_parent"
+           android:layout_height="48dp"
+
+           android:background="@drawable/curver_without_line"
+           android:ems="10"
+           android:hint="USERNAME"
+           android:inputType="text"
+           android:textColorHint="#CABCA8"
+         />
+
+       <EditText
+           android:layout_marginStart="32dp"
+           android:layout_marginEnd="32dp"
+           android:layout_marginTop="24dp"
+           android:id="@+id/editTextText7"
+           android:layout_width="match_parent"
+           android:layout_height="48dp"
+
+           android:background="@drawable/curver_without_line"
+           android:ems="10"
+           android:hint="PASSWORD"
+           android:inputType="textPassword"
+           android:textColorHint="#CABCA8"
+        />
+
+       <Button
+           android:layout_marginStart="56dp"
+           android:layout_marginEnd="56dp"
+           android:layout_marginTop="48dp"
+           android:id="@+id/button2"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+           android:backgroundTint="#79B13D"
+           android:text="Register"
+           />
+
+
+
+   </LinearLayout>
+
+
+</RelativeLayout>
