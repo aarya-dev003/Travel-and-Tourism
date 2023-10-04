@@ -172,7 +172,7 @@
         </androidx.cardview.widget.CardView>
 
         <ImageView
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="172dp"
