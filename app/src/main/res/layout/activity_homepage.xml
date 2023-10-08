@@ -89,18 +89,17 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/chatBotButton"
-            android:layout_width="150dp"
+            android:layout_width="255dp"
             android:layout_height="45dp"
 
             android:layout_alignParentRight="true"
 
 
-            android:backgroundTint="#CAF3F8"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:src="@drawable/bot" />
+            android:src="@drawable/baseline_support_agent_24" />
 
         <TextView
             android:id="@+id/textView7"
@@ -186,7 +185,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:paddingStart="16dp">
+            android:paddingStart="40dp">
 
             <ImageView
                 android:id="@+id/imageView3"

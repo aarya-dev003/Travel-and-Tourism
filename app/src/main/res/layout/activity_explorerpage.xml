@@ -39,13 +39,6 @@
 
 />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-    </ScrollView>
-
  <LinearLayout
      android:layout_width="match_parent"
      android:layout_height="300dp"
@@ -60,11 +53,13 @@
          android:id="@+id/explore1"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
          android:layout_marginStart="16dp"
 
          android:layout_marginTop="16dp"
-         android:layout_marginEnd="16dp"
-         android:layout_marginBottom="8dp"
+         android:layout_marginEnd="24dp"
+         android:layout_marginBottom="16dp"
          android:orientation="vertical">
 
 
@@ -91,12 +86,12 @@
      <LinearLayout
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-
+         android:layout_alignParentRight="true"
          android:id="@+id/explore3"
-
+         android:layout_marginStart="24dp"
          android:layout_marginTop="16dp"
          android:layout_marginEnd="16dp"
-         android:layout_marginBottom="8dp"
+         android:layout_marginBottom="16dp"
          android:orientation="vertical">
 
          <ImageView
@@ -142,10 +137,10 @@
 
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="16dp">
 
 
             <ImageView
@@ -174,10 +169,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             >
             <ImageView
                 android:id="@+id/imageView11"
