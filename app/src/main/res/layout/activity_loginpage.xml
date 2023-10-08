@@ -29,41 +29,84 @@
             android:textStyle="bold"
             />
 
-        <EditText
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
+            android:orientation="vertical"
             android:layout_marginTop="64dp"
-            android:id="@+id/EditTextEmailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
+            >
 
-            android:textCursorDrawable="@color/black"
-            android:background="@drawable/curve_edit"
-            android:textColorHint="@color/white"
-            android:clipToOutline="true"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Email / Username"
-            android:textColor="@color/black"
-           />
-        <EditText
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Username"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
+                />
+
+
+            <EditText
+
+
+                android:id="@+id/EditTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+
+                android:textCursorDrawable="@color/black"
+                android:background="@drawable/curve_edit"
+                android:textColorHint="@color/white"
+                android:clipToOutline="true"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Email / Username"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
-            android:id="@+id/editTextTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:textColorHint="@color/white"
-            android:background="@drawable/curve_edit"
+            >
 
-            android:textCursorDrawable="@color/black"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:textColor="@color/black"
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Password"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
+                />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textColorHint="@color/white"
+                android:background="@drawable/curve_edit"
+
+                android:textCursorDrawable="@color/black"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+
 
         <Button
             android:layout_marginStart="64dp"
