@@ -59,10 +59,9 @@
 
                 android:textCursorDrawable="@color/black"
                 android:background="@drawable/curve_edit"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/grey"
                 android:clipToOutline="true"
                 android:ems="10"
-                android:gravity="center"
                 android:hint="Email / Username"
                 android:textColor="@color/white"
                 />
@@ -93,12 +92,12 @@
                 android:id="@+id/editTextTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/grey"
                 android:background="@drawable/curve_edit"
 
                 android:textCursorDrawable="@color/black"
                 android:ems="10"
-                android:gravity="center"
+
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:textColor="@color/white"

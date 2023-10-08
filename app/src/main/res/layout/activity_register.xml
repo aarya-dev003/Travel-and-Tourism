@@ -58,7 +58,7 @@
                android:background="@drawable/curve_edit"
                android:textColorHint= "@color/grey"
                android:ems="10"
-               android:hint="USERNAME"
+               android:hint="Username"
                android:inputType="text"
 
 
