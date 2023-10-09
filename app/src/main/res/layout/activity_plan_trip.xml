@@ -80,8 +80,7 @@
             android:textSize="20dp" />
 
         <EditText
-            android:textAlignment="center"
-            android:id="@+id/editTextText2"
+            android:id="@+id/place_to_go_edt"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginStart="32dp"
@@ -91,7 +90,7 @@
             android:ems="10"
             android:inputType="text"
             android:text=""
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/textView12"
@@ -105,7 +104,7 @@
 
         <EditText
             android:textAlignment="center"
-            android:id="@+id/editTextText3"
+            android:id="@+id/start_date_edt"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginStart="32dp"
@@ -113,7 +112,7 @@
             android:layout_marginEnd="32dp"
             android:background="@drawable/curveshape"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="date"
             android:text=""
             />
 
@@ -129,7 +128,7 @@
 
         <EditText
             android:textAlignment="center"
-            android:id="@+id/editTextText8"
+            android:id="@+id/trip_days_edt"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginStart="32dp"
@@ -137,7 +136,7 @@
             android:layout_marginEnd="32dp"
             android:background="@drawable/curveshape"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
             android:text=""
             />
         <TextView
@@ -152,7 +151,7 @@
 
         <EditText
             android:textAlignment="center"
-            android:id="@+id/editTextText9"
+            android:id="@+id/guys_on_trip_edt"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginStart="32dp"
@@ -160,7 +159,7 @@
             android:layout_marginEnd="32dp"
             android:background="@drawable/curveshape"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
             android:text=""
             />
 
