@@ -120,7 +120,7 @@ public class ChatBotActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(), JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/chat/completions")
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer ")
                 .post(body)
                 .build();
 
@@ -138,7 +138,7 @@ public class ChatBotActivity extends AppCompatActivity {
 
                     JSONObject jsonObject;
                     try {
-                        jsonObject = new JSONObject(response.body().string());
+                        jsonObject = new JSONObject(String.valueOf(response.body()));
                         JSONArray jsonArray = jsonObject.getJSONArray("choices");
                         String result = jsonArray.getJSONObject(0)
                                 .getJSONObject("message")
