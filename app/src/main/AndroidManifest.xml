@@ -17,16 +17,9 @@
         android:theme="@style/Theme.Design.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".ChatGptActivity"
+            android:name=".ChatBotActivity"
             android:exported="false" />
-        <activity
-            android:name=".chat"
-            android:exported="false"
-            android:label="@string/title_activity_chat"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".Chatbot"
-            android:exported="false" />
+
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

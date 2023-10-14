@@ -55,7 +55,7 @@ Button plantrip;
         });
         chatBot = findViewById(R.id.chatBotButton);
         chatBot.setOnClickListener(new View.OnClickListener() {
-            Intent toChatBox = new Intent(getApplicationContext(), ChatBotKotlin.class);
+            Intent toChatBox = new Intent(getApplicationContext(), ChatBotActivity.class);
 
             @Override
             public void onClick(View v) {
