@@ -11,28 +11,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewholder>{
+public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHolder> {
 
-    List <Message> messageList;
 
-    public MessageAdapter(List<Message> messageList) {
+    List<Message> messageList;
+    public MessageAdapter(List <Message> messageList) {
 
-        this.messageList = messageList;
+        this.messageList= messageList;
     }
 
     @NonNull
     @Override
-    public MyViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View chatView = LayoutInflater.from(parent.getContext()).inflate(R.layout.chat_item, null);
-
-        MyViewholder myViewholder = new MyViewholder(chatView);
-        return myViewholder;
-
+        MyViewHolder myViewHolder = new MyViewHolder(chatView);
+        return myViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewholder holder, int position) {
-
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Message message = messageList.get(position);
         if(message.getSentBy().equals(Message.SENT_BY_ME)){
             holder.leftChatView.setVisibility(View.GONE);
@@ -43,6 +40,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewho
             holder.leftChatView.setVisibility(View.VISIBLE);
             holder.leftTextView.setText(message.getMessage());
         }
+
     }
 
     @Override
@@ -50,21 +48,21 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewho
         return messageList.size();
     }
 
-    public class MyViewholder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        LinearLayout leftChatView , rightChatView;
+        LinearLayout leftChatView, rightChatView;
         TextView leftTextView, rightTextView;
-
-        public MyViewholder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-
             leftChatView = itemView.findViewById(R.id.leftChatView);
             rightChatView = itemView.findViewById(R.id.rightChatView);
             leftTextView = itemView.findViewById(R.id.leftChatTextView);
-            rightTextView = itemView.findViewById(R.id.RightChatTextView);
+            rightTextView = itemView.findViewById(R.id.rightChatTextView);
 
 
         }
     }
+
+
 }
 
