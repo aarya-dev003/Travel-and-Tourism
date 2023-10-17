@@ -16,6 +16,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class Homepage extends AppCompatActivity {
 BottomNavigationView navigationView;
+ImageButton minigames_btn;
 Button plantrip;
     FloatingActionButton chatBot;
 
@@ -26,6 +27,7 @@ Button plantrip;
         plantrip=findViewById(R.id.Homestartplanning);
         navigationView=findViewById(R.id.navigation_drawer);
         navigationView.setSelectedItemId(R.id.home);
+        minigames_btn=findViewById(R.id.minigames_btn);
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -62,5 +64,18 @@ Button plantrip;
                 startActivity(toChatBox);
             }
         });
+        Intent intent_minigames =new Intent(getApplicationContext(),Minigames.class);
+        minigames_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent_minigames);
+            }
+        });
+
+
+
+
+
+
     }
 }
