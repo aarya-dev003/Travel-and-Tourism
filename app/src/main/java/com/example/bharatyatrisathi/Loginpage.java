@@ -28,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Loginpage extends AppCompatActivity {
     EditText editTextemail,editTextpassword;
     Button submit,signup,SignIn;
+
     FirebaseAuth mAuth;
     FirebaseDatabase database;
     private static final int RC_SIGN_IN = 1;

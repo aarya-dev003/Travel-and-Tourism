@@ -52,7 +52,7 @@
            <EditText
 
                android:textColor="@color/white"
-               android:id="@+id/editTextText4"
+               android:id="@+id/name"
                android:layout_width="match_parent"
                android:layout_height="48dp"
                android:background="@drawable/curve_edit"
@@ -89,13 +89,13 @@
 
                android:textColor="@color/white"
 
-               android:id="@+id/editTextText5"
+               android:id="@+id/email"
                android:layout_width="match_parent"
                android:layout_height="48dp"
                android:background="@drawable/curve_edit"
                android:textColorHint="@color/grey"
                android:hint="Email"
-               android:inputType="textEmailAddress"
+               android:inputType="text"
 
                />
        </LinearLayout>
@@ -123,7 +123,7 @@
 
                android:textColor="@color/white"
 
-               android:id="@+id/editTextText6"
+               android:id="@+id/password"
                android:layout_width="match_parent"
                android:layout_height="48dp"
                android:background="@drawable/curve_edit"
@@ -160,7 +160,7 @@
 
            <EditText
                android:textColor="@color/white"
-               android:id="@+id/editTextText7"
+               android:id="@+id/confirm_password"
                android:layout_width="match_parent"
                android:layout_height="48dp"
                android:background="@drawable/curve_edit"
@@ -178,10 +178,9 @@
            android:layout_marginStart="64dp"
            android:layout_marginEnd="64dp"
            android:layout_marginTop="48dp"
-           android:id="@+id/button2"
+           android:id="@+id/sign_up_btn"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-
 
            android:backgroundTint="#FB1010"
            android:text="Register"

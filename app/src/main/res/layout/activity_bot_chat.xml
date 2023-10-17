@@ -7,9 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ChatBotActivity">
 
-
-
-
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
@@ -33,8 +30,6 @@
             android:id="@+id/recycler_view"
 
             />
-
-
         </androidx.cardview.widget.CardView>
     </LinearLayout>
     <RelativeLayout

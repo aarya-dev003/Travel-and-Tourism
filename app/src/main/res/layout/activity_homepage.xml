@@ -32,10 +32,10 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="5dp"
-            app:cardElevation="50dp"
+            app:cardElevation="20dp"
             android:background="@drawable/curveshape"
             >
 
@@ -56,23 +56,6 @@
 
 
 
-
-
-    <TextView
-        android:id="@+id/popularDestination"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/constraintLayout"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="10dp"
-        android:padding="1sp"
-        android:text="Popular Destinations"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
     <RelativeLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -84,18 +67,18 @@
 
 
         android:layout_marginEnd="16dp"
-        android:background="@drawable/img_28"
+        android:background="@color/black"
 
         >
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/chatBotButton"
-            android:layout_width="255dp"
-            android:layout_height="45dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
 
             android:layout_alignParentRight="true"
 
-
+            android:backgroundTint="@color/white"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
@@ -177,7 +160,7 @@
         android:layout_marginEnd="9dp"
         android:id="@+id/scrollView"
 
-        android:layout_below="@+id/popularDestination"
+        android:layout_below="@+id/constraintLayout"
         android:layout_marginTop="10sp"
 
         >
