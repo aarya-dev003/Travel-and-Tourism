@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "366295676845",
+    "project_id": "bharat-yatri-sathi--test",
+    "storage_bucket": "bharat-yatri-sathi--test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366295676845:android:886829f446a32fe451d324",
+        "android_client_info": {
+          "package_name": "com.example.bharatyatrisathi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxkbdcqh8pMrqGbgvuWP3giR70p1YVoqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
