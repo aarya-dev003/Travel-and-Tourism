@@ -23,6 +23,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -75,7 +76,7 @@ public class MapFragment extends Fragment {
         LocationData locationData = new LocationData(latitude, longitude);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("Locations")
-                .document("user1")
+                .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .set(locationData)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
