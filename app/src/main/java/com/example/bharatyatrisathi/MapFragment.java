@@ -1,74 +1,100 @@
 package com.example.bharatyatrisathi;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.location.Address;
-import android.location.Geocoder;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import java.io.IOException;
-import java.util.ArrayList;
-
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MapFragment extends Fragment {
-    public GoogleMap mmap;
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_map,container,false);
-        SupportMapFragment supportMapFragment=(SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mymap);
-        supportMapFragment.getMapAsync(new OnMapReadyCallback() {
-            LatLng indorelatLng= new LatLng(22.6210, 75.8036);
-            @Override
-            public void onMapReady(@NonNull GoogleMap googleMap) {
-                MarkerOptions markerOptions=new MarkerOptions();
-                markerOptions.position(indorelatLng);
-                markerOptions.title("You");
-                googleMap.clear();
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(indorelatLng,16f));
-                googleMap.addMarker(markerOptions);
+    private GoogleMap mMap;
+    private FusedLocationProviderClient fusedLocationProviderClient;
+    private FragmentActivity fragmentActivity;
 
-                mmap=googleMap;
-                mmap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-                    @Override
-                    public void onMapClick(@NonNull LatLng latLong) {
-                        MarkerOptions markerOptions =new MarkerOptions().position(latLong).title("Clicked here");
-                        mmap.addMarker(markerOptions);
-                        //Geocoder class se apan map pe kahi bhi landmark chor sakte h
-                        Geocoder geocoder=new Geocoder(getActivity().getApplicationContext());
-                        //jese apan ne jo location dali vaha pe data store nhi h toh yeah uske aas pass ka data btta k show kar dega for example jese total 5 location h or yaha 1 set h toh vo location sabse pahle aayegi or last m 5th vali location
-                        try {
-                            ArrayList<Address> addressArrayList = (ArrayList<Address>) geocoder.getFromLocation(latLong.latitude, latLong.longitude, 1);
-                            Log.d("ADDRESS",addressArrayList.get(0).getAddressLine(0));
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
-                });
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_map, container, false);
+
+        fragmentActivity = getActivity();
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(fragmentActivity);
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mymap);
+        mapFragment.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(GoogleMap googleMap) {
+                mMap = googleMap;
+
+                getLastLocation();
             }
         });
-        return view;
 
+        return view;
     }
 
+    public interface LocationCallback {
+        void onLocationReceived(double latitude, double longitude);
+    }
+
+    private void getLastLocation() {
+        if (ContextCompat.checkSelfPermission(fragmentActivity, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            fusedLocationProviderClient.getLastLocation().addOnSuccessListener(fragmentActivity, new OnSuccessListener<android.location.Location>() {
+                @Override
+                public void onSuccess(android.location.Location location) {
+                    if (location != null) {
+                        // Invoke the callback with the location data
+                        uploadLocationToFirestore(location.getLatitude(), location.getLongitude());
+                    }
+                }
+            });
+        } else {
+            ActivityCompat.requestPermissions(fragmentActivity, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        }
+    }
+
+    private void uploadLocationToFirestore(double latitude, double longitude) {
+        LocationData locationData = new LocationData(latitude, longitude);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("Locations")
+                .document("user1")
+                .set(locationData)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("Firestore", "Location data uploaded.");
+
+                        // Add a marker for your location
+                        LatLng userLatLng = new LatLng(latitude, longitude);
+                        mMap.addMarker(new MarkerOptions().position(userLatLng).title("You are here"));
+
+                        // Set the camera to your location with a desired zoom level
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLatLng, 16f));
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("Firestore error", "Error uploading location data: " + e.getMessage());
+                    }
+                });
+    }
 }

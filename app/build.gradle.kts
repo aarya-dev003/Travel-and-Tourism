@@ -51,6 +51,7 @@ dependencies {
     implementation("com.google.firebase:firebase-config-ktx:21.4.1")
     implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
     implementation("com.google.firebase:firebase-firestore-ktx:24.8.1")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
 
 
     testImplementation("junit:junit:4.13.2")

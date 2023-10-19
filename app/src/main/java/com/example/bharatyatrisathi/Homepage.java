@@ -1,7 +1,7 @@
 package com.example.bharatyatrisathi;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,22 +12,31 @@ import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationView;
 
 public class Homepage extends AppCompatActivity {
 BottomNavigationView navigationView;
 ImageButton minigames_btn;
 Button plantrip;
     FloatingActionButton chatBot;
+    Button FindStranger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         plantrip=findViewById(R.id.Homestartplanning);
+        FindStranger=findViewById(R.id.FindStranger);
         navigationView=findViewById(R.id.navigation_drawer);
         navigationView.setSelectedItemId(R.id.home);
         minigames_btn=findViewById(R.id.minigames_btn);
+
+        FindStranger.setOnClickListener(new View.OnClickListener() {
+            Intent intent=new Intent(getApplicationContext(),MeetStranger.class);
+            @Override
+            public void onClick(View view) {
+                startActivity(intent);
+            }
+        });
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -71,11 +80,8 @@ Button plantrip;
                 startActivity(intent_minigames);
             }
         });
-
-
-
-
-
+    }
+    private void getLastLocation(){
 
     }
 }
