@@ -72,11 +72,9 @@
         android:layout_height="300dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        app:cardElevation="20dp"
-        app:cardCornerRadius="20dp"
+
+        android:background="@color/white"
+        android:elevation="5dp"
 
         >
 
@@ -85,7 +83,6 @@
             android:layout_height="match_parent"
             android:flipInterval="3000"
             android:autoStart="true"
-            android:background="@drawable/homepage_linear_layout"
             android:inAnimation="@anim/slide_in_right"
             android:outAnimation="@anim/slide_out_left">
 
