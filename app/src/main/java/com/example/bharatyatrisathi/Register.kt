@@ -29,7 +29,7 @@ class Register : AppCompatActivity() {
                 else{
                     user.image= it
 
-                    binding.addImage.setImageURI(uri)
+                    binding.profileImage.setImageURI(uri)
                 }
             }
         }
@@ -82,5 +82,11 @@ class Register : AppCompatActivity() {
         binding.addImage.setOnClickListener{
             launcher.launch("image/*")
         }
+
+        binding.signin.setOnClickListener{
+            startActivity(Intent(this@Register, Login::class.java))
+            finish()
+        }
+
     }
 }
