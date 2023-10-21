@@ -17,7 +17,7 @@ public class Homepage extends AppCompatActivity {
 BottomNavigationView navigationView;
 ImageButton minigames_btn;
 Button plantrip;
-    FloatingActionButton chatBot;
+    ImageButton chatBot;
     Button FindStranger;
 
     @Override
