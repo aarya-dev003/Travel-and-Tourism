@@ -19,6 +19,8 @@
         android:layout_marginBottom="16dp">
 
         <TextView
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@+id/startPlanningRL"
             android:layout_width="180dp"
@@ -41,7 +43,6 @@
             android:layout_alignParentEnd="true"
             >
             <Button
-
                 style="?attr/materialButtonOutlinedStyle"
                 android:id="@+id/Homestartplanning"
                 android:elevation="10dp"
@@ -69,7 +70,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="240dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
 
@@ -81,8 +82,9 @@
         <ViewFlipper
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:flipInterval="3000"
+            android:flipInterval="5000"
             android:autoStart="true"
+            android:layout_gravity="center"
             android:inAnimation="@anim/slide_in_right"
             android:outAnimation="@anim/slide_out_left">
 
@@ -134,6 +136,7 @@
         android:layout_below="@+id/constraintLayout"
         >
         <Button
+            style="?attr/materialButtonOutlinedStyle"
             android:elevation="20dp"
             android:shadowColor="@android:color/transparent"
             android:id="@+id/FindStranger"
@@ -150,6 +153,7 @@
             />
 
         <ImageButton
+            android:elevation="5dp"
             android:id="@+id/chatBotButton"
             android:layout_width="64dp"
             android:layout_height="64dp"
@@ -158,6 +162,7 @@
             android:src="@drawable/bot" />
 
         <ImageButton
+            android:elevation="5dp"
             android:id="@+id/minigames_btn"
             android:layout_width="64dp"
             android:layout_height="64dp"
@@ -189,7 +194,7 @@
         android:layout_marginEnd="20dp"
         android:id="@+id/scrollView"
 
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="18dp"
         android:layout_below="@+id/popularDestination"
 
 
