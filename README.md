@@ -1,10 +1,10 @@
-# Project Name: Bharat Yatri Sathi
+#Bharat Yatri Sathi
 
 ## Description
 
 **Bharat Yatri Sathi** is an Android app developed as a part of the Smart India Hackathon, offering a unique and exciting way to connect with strangers while providing essential features like an AI chatbot for travel and medical queries, an SOS emergency button, a collection of entertaining mini-games, a messaging feature, and an AI trip planner.
 
-
+![logo](https://github.com/AnshGaur-dev/BYSGitProject/assets/94800583/1932028f-4f70-494f-a5b3-3013d06d03e8)
 
 This project is a part of the Smart India Hackathon, an initiative to promote innovation and problem-solving through technology. **Bharat Yatri Sathi** is designed to foster connections, provide assistance, and enhance travel planning for a smarter and more connected India.
 
