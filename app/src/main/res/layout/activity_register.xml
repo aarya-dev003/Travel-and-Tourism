@@ -7,24 +7,52 @@
     tools:context=".Register"
     android:background="@drawable/login_page">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:id="@+id/imagerl"
+        android:layout_alignParentTop="true"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:baselineAlignBottom="true"
+            android:background="@drawable/round_button"
+            android:foregroundGravity="center"
+            android:src="@drawable/user" />
+
+        <ImageButton
+            android:src="@drawable/adduser"
+            android:forceHasOverlappingRendering="true"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/profileImage"
+            android:id="@+id/addImage"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:background="@drawable/round_button"
+
+
+            />
+    </RelativeLayout>
+
+
    <LinearLayout
+       android:layout_below="@+id/imagerl"
+       android:id="@+id/ll2"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:orientation="vertical"
-       android:layout_marginTop="48dp"
+
        android:padding="24dp"
        >
 
-       <ImageButton
-           android:id="@+id/addImage"
-           android:layout_width="128dp"
-           android:layout_height="128dp"
-           android:layout_gravity="center"
-           android:scaleType="centerCrop"
-           android:background="@drawable/round_button"
-           android:src="@drawable/user"
 
-           />
 
        <LinearLayout
            android:layout_width="match_parent"
@@ -153,6 +181,39 @@
            android:backgroundTint="#FB1010"
            android:text="Register"
            />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_alignParentBottom="true"
+           android:layout_marginStart="32dp"
+           android:layout_marginTop="32dp"
+           android:layout_marginEnd="32dp"
+           android:layout_marginBottom="32dp"
+           android:gravity="center">
+
+
+           <TextView
+               android:id="@+id/haveAccount"
+               android:layout_width="192dp"
+               android:layout_height="48dp"
+
+               android:gravity="center"
+               android:text="Already Have An Account"
+               android:textColor="@color/white" />
+
+           <Button
+               android:id="@+id/signin"
+               android:layout_width="104dp"
+               android:layout_height="48dp"
+
+               android:background="@android:color/transparent"
+               android:gravity="center"
+               android:text="Sign In"
+               android:textColor="#00BCD4" />
+
+       </LinearLayout>
+
 
 
 

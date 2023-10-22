@@ -27,6 +27,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Objects;
+
 public class MapFragment extends Fragment {
     private GoogleMap mMap;
     private FusedLocationProviderClient fusedLocationProviderClient;
@@ -76,7 +78,7 @@ public class MapFragment extends Fragment {
         LocationData locationData = new LocationData(latitude, longitude);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("Locations")
-                .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
                 .set(locationData)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
