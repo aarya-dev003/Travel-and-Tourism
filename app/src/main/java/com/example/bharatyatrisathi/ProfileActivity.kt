@@ -28,6 +28,13 @@ class ProfileActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.setting.setOnClickListener{
+            startActivity(Intent(this@ProfileActivity, Setting::class.java))
+
+        }
+
+
+
         binding.edit.setOnClickListener{
             val intent = Intent(this@ProfileActivity , Register::class.java)
             intent.putExtra("MODE", 1)

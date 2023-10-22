@@ -136,6 +136,7 @@
         android:layout_below="@+id/constraintLayout"
         >
         <Button
+            android:layout_marginHorizontal="16dp"
             style="?attr/materialButtonOutlinedStyle"
             android:elevation="20dp"
             android:shadowColor="@android:color/transparent"
