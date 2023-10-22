@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="16dp"
+    tools:context=".ProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/profileLayout"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:fontFamily="sans-serif-condensed-light"
+            android:textSize="24dp"
+
+            />
+
+        <ImageButton
+
+            android:layout_marginHorizontal="2dp"
+        android:id="@+id/message"
+        android:layout_toLeftOf="@+id/setting"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/message"
+        android:background="@android:color/transparent"
+        android:layout_width="48dp"
+        android:layout_height="48dp"/>
+
+        <ImageButton
+            android:id="@+id/setting"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/setting"
+            android:background="@android:color/transparent"
+            android:layout_width="48dp"
+            android:layout_height="48dp"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@+id/profileLayout"
+        android:layout_marginTop="16dp"
+        android:id="@+id/profileRl"
+        android:layout_width="match_parent"
+        android:padding="2dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+
+            android:layout_margin="2dp"
+            android:id="@+id/profileImage"
+            android:layout_width="112dp"
+            android:layout_height="112dp"
+            android:baselineAlignBottom="true"
+            android:background="@drawable/round_button"
+            android:foregroundGravity="center"
+            android:src="@drawable/user"
+
+            />
+
+        <LinearLayout
+            android:layout_toRightOf="@+id/profileImage"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_marginTop="16dp"
+
+                android:layout_marginStart="24dp"
+                android:text="Name"
+                android:id="@+id/nametv"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_marginTop="8dp"
+
+                android:layout_marginStart="24dp"
+                android:text="Email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+
+                android:layout_marginTop="8dp"
+
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:id="@+id/edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:layout_marginHorizontal="20dp"
+                />
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/profileRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/navigation_drawer_card"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:elevation="50dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        app:cardCornerRadius="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentEnd="true">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation_drawer"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:elevation="5dp"
+            app:itemIconTint="@color/black"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginBottom="5dp"
+
+
+            android:foregroundGravity="center"
+            app:menu="@menu/navigation_buttons" />
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

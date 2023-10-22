@@ -51,7 +51,7 @@ Button plantrip;
                             return true;
                         }
                         if (id == R.id.profile) {
-                            Intent intent = new Intent(getApplicationContext(), Profile.class);
+                            Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                             startActivity(intent);
                             finish();
                             return true;
