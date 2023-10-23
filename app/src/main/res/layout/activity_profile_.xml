@@ -118,17 +118,6 @@
     </RelativeLayout>
 
 
-    <com.google.android.material.tabs.TabLayout
-        android:layout_marginTop="24dp"
-        android:layout_below="@+id/profileRl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-
-    <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/navigation_drawer_card"
