@@ -19,6 +19,7 @@
         android:layout_marginBottom="16dp">
 
         <TextView
+            android:fontFamily="sans-serif-condensed"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
@@ -43,9 +44,10 @@
             android:layout_alignParentEnd="true"
             >
             <Button
+                android:fontFamily="sans-serif-condensed"
                 style="?attr/materialButtonOutlinedStyle"
                 android:id="@+id/Homestartplanning"
-                android:elevation="10dp"
+                android:elevation="5dp"
                 android:shadowColor="@android:color/transparent"
                 android:layout_marginTop="24dp"
                 android:layout_marginStart="10dp"
@@ -136,9 +138,10 @@
         android:layout_below="@+id/constraintLayout"
         >
         <Button
+            android:fontFamily="sans-serif-condensed"
             android:layout_marginHorizontal="16dp"
             style="?attr/materialButtonOutlinedStyle"
-            android:elevation="20dp"
+            android:elevation="5dp"
             android:shadowColor="@android:color/transparent"
             android:id="@+id/FindStranger"
             android:layout_width="wrap_content"
@@ -176,6 +179,7 @@
     </RelativeLayout>
 
     <TextView
+        android:fontFamily="sans-serif-condensed"
         android:id="@+id/popularDestination"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
