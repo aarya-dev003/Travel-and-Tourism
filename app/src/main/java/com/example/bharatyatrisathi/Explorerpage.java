@@ -24,11 +24,13 @@ public class Explorerpage extends AppCompatActivity {
                 if (id == R.id.home) {
                     Intent intent = new Intent(getApplicationContext(), Homepage.class);
                     startActivity(intent);
+                    finish();
                     return true;
                 }
                 if (id == R.id.profile) {
-                    Intent intent = new Intent(getApplicationContext(), Profile.class);
+                    Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                     startActivity(intent);
+                    finish();
                     return true;
                 }
 

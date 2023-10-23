@@ -37,12 +37,11 @@ public class PlanTrip extends AppCompatActivity {
 
 
         back.setOnClickListener(new View.OnClickListener() {
-
-
             Intent toMain = new Intent(getApplicationContext(), Homepage.class);
             @Override
             public void onClick(View v) {
                 startActivity(toMain);
+                finish();
             }
         });
     }

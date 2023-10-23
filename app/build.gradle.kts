@@ -66,7 +66,7 @@ dependencies {
     implementation("com.google.firebase:firebase-database-ktx:20.2.2")
 
 
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
 
     implementation ("com.squareup.moshi:moshi:1.12.0")
     implementation ("com.squareup.moshi:moshi-kotlin:1.12.0")
@@ -78,6 +78,8 @@ dependencies {
 
     // Import the BoM for the Firebase platform
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+
+    implementation ("com.squareup.picasso:picasso:2.8")
 
 
 

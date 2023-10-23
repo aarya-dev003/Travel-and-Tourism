@@ -47,11 +47,13 @@ Button plantrip;
                         if (id == R.id.explore) {
                             Intent intent = new Intent(getApplicationContext(), Explorerpage.class);
                             startActivity(intent);
+                            finish();
                             return true;
                         }
                         if (id == R.id.profile) {
-                            Intent intent = new Intent(getApplicationContext(), Profile.class);
+                            Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                             startActivity(intent);
+                            finish();
                             return true;
                         }
                         return false;
@@ -62,6 +64,7 @@ Button plantrip;
             @Override
             public void onClick(View v) {
                 startActivity(intent);
+                finish();
             }
         });
         chatBot = findViewById(R.id.chatBotButton);
