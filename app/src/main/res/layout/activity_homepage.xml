@@ -60,14 +60,7 @@
 
         </RelativeLayout>
 
-
-
-
-
-
-    </RelativeLayout>
-
-
+  </RelativeLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/constraintLayout"
@@ -80,7 +73,6 @@
         android:elevation="5dp"
 
         >
-
         <ViewFlipper
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -172,11 +164,7 @@
             android:layout_height="64dp"
             android:background="@android:color/transparent"
             android:src="@drawable/minig" />
-
-
-
-
-    </RelativeLayout>
+  </RelativeLayout>
 
     <TextView
         android:fontFamily="sans-serif-condensed"

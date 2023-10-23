@@ -84,7 +84,5 @@ Button plantrip;
             }
         });
     }
-    private void getLastLocation(){
 
-    }
 }

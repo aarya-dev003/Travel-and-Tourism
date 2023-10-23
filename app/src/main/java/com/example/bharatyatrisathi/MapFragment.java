@@ -6,13 +6,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -24,10 +22,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.Objects;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.OnCompleteListener;
 
 public class MapFragment extends Fragment {
     private GoogleMap mMap;
@@ -46,8 +46,9 @@ public class MapFragment extends Fragment {
             @Override
             public void onMapReady(GoogleMap googleMap) {
                 mMap = googleMap;
-
                 getLastLocation();
+
+                showNearbyUsers();
             }
         });
 
@@ -64,8 +65,7 @@ public class MapFragment extends Fragment {
                 @Override
                 public void onSuccess(android.location.Location location) {
                     if (location != null) {
-                        // Invoke the callback with the location data
-                        uploadLocationToFirestore(location.getLatitude(), location.getLongitude());
+                        onLocationReceived(location.getLatitude(), location.getLongitude());
                     }
                 }
             });
@@ -74,11 +74,15 @@ public class MapFragment extends Fragment {
         }
     }
 
+    private void onLocationReceived(double latitude, double longitude) {
+        uploadLocationToFirestore(latitude, longitude);
+    }
+
     private void uploadLocationToFirestore(double latitude, double longitude) {
         LocationData locationData = new LocationData(latitude, longitude);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("Locations")
-                .document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
+                .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .set(locationData)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -100,5 +104,35 @@ public class MapFragment extends Fragment {
                     }
                 });
     }
-    {}
+
+    private void showNearbyUsers() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference locationsRef = db.collection("Locations");
+
+        locationsRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        double userLatitude = document.getDouble("latitude");
+                        double userLongitude = document.getDouble("longitude");
+
+                        float distance = calculateDistance(userLatitude, userLongitude);
+
+                        if (distance < 100000000) {
+                            LatLng nearbyUserLatLng = new LatLng(userLatitude, userLongitude);
+                            mMap.addMarker(new MarkerOptions().position(nearbyUserLatLng).title("Nearby User"));
+                        }
+                    }
+                } else {
+
+                }
+            }
+        });
+    }
+
+    private float calculateDistance(double userLatitude, double userLongitude) {
+
+     return 0.0F;
+    }
 }
