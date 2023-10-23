@@ -52,11 +52,13 @@ class ProfileActivity : AppCompatActivity() {
                 R.id.home -> {
                     val intent = Intent(applicationContext, Homepage::class.java)
                     startActivity(intent)
+                    finish()
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.explore -> {
-                    val intent = Intent(applicationContext, Explorerpage::class.java)
+                    val intent = Intent(applicationContext, ImagesActivity::class.java)
                     startActivity(intent)
+                    finish()
                     return@setOnNavigationItemSelectedListener true
                 }
             }
@@ -67,15 +69,14 @@ class ProfileActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        Firebase.firestore.collection(USER_NODE).document(Firebase.auth.currentUser!!.uid).get().addOnSuccessListener {
-                val user:UserModel = it.toObject<UserModel>()!!
-                binding.nametv.text = user.name
-                binding.email.text = user.email
+            Firebase.firestore.collection(USER_NODE).document(Firebase.auth.currentUser!!.uid).get().addOnSuccessListener {
+                    val user:UserModel = it.toObject<UserModel>()!!
+                    binding.nametv.text = user.name
+                    binding.email.text = user.email
 
-                if(!user.image.isNullOrEmpty()){
-                    Picasso.get().load(user.image).into(binding.profileImage)
-                }
+                    if(!user.image.isNullOrEmpty()){
+                        Picasso.get().load(user.image).into(binding.profileImage)
+                    }
             }
-        }
-
+    }
 }

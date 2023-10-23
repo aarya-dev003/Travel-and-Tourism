@@ -21,10 +21,10 @@
             android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
+
             android:fontFamily="sans-serif-condensed-light"
             android:textSize="24dp"
-
+            android:text="Profile"
             />
 
         <ImageButton
@@ -119,12 +119,13 @@
 
 
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/navigation_drawer_card"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_alignParentBottom="true"
-        android:elevation="50dp"
+        app:cardElevation="12dp"
+        android:backgroundTint="@color/white"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
         app:cardCornerRadius="30dp"
@@ -146,7 +147,7 @@
 
             android:foregroundGravity="center"
             app:menu="@menu/navigation_buttons" />
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView >
 
 
 
