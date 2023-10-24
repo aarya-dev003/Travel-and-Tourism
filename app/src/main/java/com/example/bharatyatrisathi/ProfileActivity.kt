@@ -33,14 +33,7 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(Intent(this@ProfileActivity, Setting::class.java))
         }
 
-        binding.btnlogout.setOnClickListener {
-            if (Firebase.auth.currentUser != null) {
-                FirebaseAuth.getInstance().signOut()
-                startActivity(Intent(this@ProfileActivity, Login::class.java))
-                Toast.makeText(this@ProfileActivity, "Logged out successfully", Toast.LENGTH_SHORT).show()
-                finish()
-            }
-        }
+
 
         binding.edit.setOnClickListener {
             val intent = Intent(this@ProfileActivity, Register::class.java)

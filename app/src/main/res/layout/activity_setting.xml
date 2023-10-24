@@ -15,18 +15,21 @@
         android:layout_height="wrap_content">
 
         <ImageButton
+
           android:layout_alignParentStart="true"
             android:id="@+id/backButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:background="@color/white"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:src="@drawable/baseline_arrow_back_ios_new_24"
             />
 
         <TextView
+            android:layout_alignParentTop="true"
+            android:elevation="8dp"
             android:layout_toRightOf="@+id/backButton"
             android:layout_marginStart="24dp"
            android:layout_gravity="center_vertical"
@@ -41,6 +44,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:elevation="8dp"
         android:layout_marginTop="48dp"
         android:layout_below="@+id/settingRL"
         android:layout_width="match_parent"
@@ -49,6 +53,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:elevation="8dp"
             android:paddingStart="20dp"
             android:text="Account"
             android:fontFamily="sans-serif-condensed"
@@ -62,6 +67,7 @@
             />
 
         <TextView
+            android:elevation="8dp"
             android:paddingStart="20dp"
             android:text="Help"
             android:fontFamily="sans-serif-condensed"
@@ -74,6 +80,7 @@
 
             />
         <TextView
+            android:elevation="8dp"
             android:text="Advance Settings"
             android:fontFamily="sans-serif-condensed"
             android:textStyle="bold"
@@ -85,6 +92,7 @@
             android:paddingStart="20dp"
             />
         <TextView
+            android:elevation="8dp"
             android:text="About"
             android:fontFamily="sans-serif-condensed"
             android:textStyle="bold"
@@ -96,6 +104,7 @@
             android:paddingStart="20dp"
             />
         <TextView
+            android:elevation="8dp"
             android:text="Version"
             android:fontFamily="sans-serif-condensed"
             android:textStyle="bold"
@@ -107,6 +116,8 @@
             android:paddingStart="20dp"
             />
         <TextView
+            android:elevation="8dp"
+            android:id="@+id/btnlogout"
             android:text="Sign Out"
             android:fontFamily="sans-serif-condensed"
             android:textStyle="bold"
