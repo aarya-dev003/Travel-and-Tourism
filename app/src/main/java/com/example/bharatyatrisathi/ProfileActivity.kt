@@ -9,6 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.bharatyatrisathi.databinding.ActivityProfileBinding
 import com.example.bharatyatrisathi.model.UserModel
 import com.example.bharatyatrisathi.utils.USER_NODE
+import com.google.android.gms.auth.api.Auth
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -23,6 +29,16 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+//        var gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//            .requestEmail()
+//            .build()
+//
+//        var googleApiClient = GoogleApiClient.Builder(this)
+//            .enableAutoManage(this, this)
+//            .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+//            .build()
 
         binding.message.setOnClickListener {
             startActivity(Intent(this@ProfileActivity, MeetStranger::class.java))
@@ -82,5 +98,9 @@ class ProfileActivity : AppCompatActivity() {
                 }
             }
         }
+
+
+
+
     }
 }

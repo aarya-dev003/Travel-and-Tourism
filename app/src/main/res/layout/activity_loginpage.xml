@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_page"
-    tools:context=".Loginpage"
+    tools:context=".Login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_page"
@@ -10,6 +10,7 @@
 
 
     <LinearLayout
+        android:id="@+id/lllogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -33,11 +34,11 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-android:layout_marginTop="64dp"
+            android:layout_marginTop="64dp"
             android:layout_marginHorizontal="20dp"
 
 
-           >
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
@@ -129,12 +130,51 @@ android:layout_marginTop="64dp"
 
         </LinearLayout>
 
-
-
-
-
-
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/lllogin"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="64dp"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:paddingTop="4dp"
+            android:paddingHorizontal="4dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_alignParentStart="true"
+            android:id="@+id/google_sign_in"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:src="@drawable/google"
+            />
+
+        <ImageButton
+            android:padding="2dp"
+            android:layout_marginHorizontal="16dp"
+            android:src="@drawable/facebook"
+            android:layout_toRightOf="@+id/google_sign_in"
+            android:id="@+id/facebook_sign_in"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:layout_width="56dp"
+            android:layout_height="56dp"/>
+
+        <ImageButton
+            android:layout_marginHorizontal="16dp"
+            android:src="@drawable/twitter"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/facebook_sign_in"
+            android:id="@+id/twitter_sign_in"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:layout_width="56dp"
+            android:layout_height="56dp"/>
+    </RelativeLayout>
 
 
 </RelativeLayout>
