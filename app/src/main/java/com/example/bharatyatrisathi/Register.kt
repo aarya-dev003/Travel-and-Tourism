@@ -91,11 +91,11 @@ class Register : AppCompatActivity() {
                             user.name = binding.name.editableText?.toString()
                             user.password = binding.password.editableText?.toString()
                             user.email = binding.email.editableText?.toString()
-
+                            val name=binding.name.editableText.toString();
 
 
                             Firebase.firestore.collection(USER_NODE)
-                                .document(Firebase.auth.currentUser!!.uid).set(user)
+                                .document(name).set(user)
                                 .addOnSuccessListener {
                                     startActivity(Intent(this@Register, Homepage::class.java))
                                     finish()
