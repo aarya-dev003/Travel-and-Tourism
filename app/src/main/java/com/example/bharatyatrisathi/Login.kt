@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bharatyatrisathi.databinding.ActivityLoginpageBinding
 import com.example.bharatyatrisathi.model.UserModel
+import com.example.bharatyatrisathi.utils.USER_NODE
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -21,6 +22,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.auth.User
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class Login : AppCompatActivity() {
@@ -92,8 +94,35 @@ class Login : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
 
-                        val i = Intent(this@Login, Homepage::class.java)
-                        startActivity(i)
+                        val account = GoogleSignIn.getLastSignedInAccount(this)
+                        if (account != null) {
+                            val googleName = account.displayName
+                            val googleEmail = account.email
+                            val googleUserId = account.id
+                            val profileImage = account.photoUrl
+
+
+                            val user = UserModel()
+                            user.name = googleName
+                            user.email = googleEmail
+                            user.image = profileImage.toString()
+
+                            if (googleUserId != null) {
+                                Firebase.firestore.collection(USER_NODE)
+                                    .document(Firebase.auth.currentUser!!.uid).set(user)
+                                    .addOnSuccessListener {
+                                         startActivity(Intent(this@Login, Homepage::class.java))
+                                        finish()
+                                    }
+                                    .addOnFailureListener {
+                                        Toast.makeText(
+                                            this@Login,
+                                            task.exception?.localizedMessage,
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                            }
+                        }
                     } else {
                         Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
                     }

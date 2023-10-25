@@ -94,8 +94,10 @@ class Register : AppCompatActivity() {
                             val name=binding.name.editableText.toString();
 
 
+
+
                             Firebase.firestore.collection(USER_NODE)
-                                .document(name).set(user)
+                                .document(Firebase.auth.currentUser!!.uid).set(user)
                                 .addOnSuccessListener {
                                     startActivity(Intent(this@Register, Homepage::class.java))
                                     finish()

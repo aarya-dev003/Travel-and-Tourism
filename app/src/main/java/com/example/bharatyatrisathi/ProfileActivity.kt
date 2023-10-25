@@ -92,23 +92,5 @@ class ProfileActivity : AppCompatActivity() {
             }
         }
 
-        val account = (application as MyApplication).googleSignInAccount
-
-        if (account != null) {
-            // Access the user's Google Sign-In data
-            val displayName = account.displayName
-            val email = account.email
-            val photoUrl = account.photoUrl
-
-
-            // Set the data in the UI components
-            binding.nametv.text = displayName
-            binding.email.text = email
-
-            // Load the profile photo using an image-loading library like Picasso or Glide
-            if (photoUrl != null) {
-                Picasso.get().load(photoUrl).into(binding.profileImage)
-            }
-        }
     }
 }

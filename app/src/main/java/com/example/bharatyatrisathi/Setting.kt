@@ -30,6 +30,9 @@ class Setting : AppCompatActivity() {
                 Toast.makeText(this@Setting, "Logged out successfully", Toast.LENGTH_SHORT).show()
                 finish()
             }
+
+
+
         }
     }
 }
