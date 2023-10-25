@@ -86,10 +86,12 @@ class Login : AppCompatActivity() {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
 
             val account = task.getResult(ApiException::class.java)
+            (application as MyApplication).googleSignInAccount = account
             val credential = GoogleAuthProvider.getCredential(account.idToken , null)
             FirebaseAuth.getInstance().signInWithCredential(credential)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+
                         val i = Intent(this@Login, Homepage::class.java)
                         startActivity(i)
                     } else {
@@ -99,6 +101,7 @@ class Login : AppCompatActivity() {
 
 
         }
+
     }
 
 }

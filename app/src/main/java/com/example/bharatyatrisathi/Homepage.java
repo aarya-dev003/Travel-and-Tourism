@@ -30,6 +30,7 @@ Button plantrip;
         navigationView.setSelectedItemId(R.id.home);
         minigames_btn=findViewById(R.id.minigames_btn);
 
+
         FindStranger.setOnClickListener(new View.OnClickListener() {
             Intent intent=new Intent(getApplicationContext(),MeetStranger.class);
             @Override
