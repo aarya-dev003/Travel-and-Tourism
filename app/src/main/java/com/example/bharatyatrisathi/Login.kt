@@ -17,8 +17,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.android.play.core.integrity.e
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthSettings
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.auth.User
@@ -37,6 +40,7 @@ class Login : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        //Sign in with Google
 
         val options = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -50,7 +54,7 @@ class Login : AppCompatActivity() {
         }
 
 
-
+// Sign in with email and password
         binding.LoginSignup.setOnClickListener{
             startActivity(Intent(this@Login , Register::class.java))
             finish()
@@ -91,7 +95,7 @@ class Login : AppCompatActivity() {
             (application as MyApplication).googleSignInAccount = account
             val credential = GoogleAuthProvider.getCredential(account.idToken , null)
             FirebaseAuth.getInstance().signInWithCredential(credential)
-                .addOnCompleteListener { task ->
+                .addOnCompleteListener {task ->
                     if (task.isSuccessful) {
 
                         val account = GoogleSignIn.getLastSignedInAccount(this)
