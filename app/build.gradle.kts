@@ -47,7 +47,7 @@ dependencies {
     implementation("com.google.android.gms:play-services-maps:18.1.0")
     implementation("com.google.firebase:firebase-inappmessaging-display-ktx:20.3.5")
     implementation("com.google.firebase:firebase-auth-ktx:22.2.0")
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
+
     implementation("com.google.firebase:firebase-config-ktx:21.4.1")
     implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
     implementation("com.google.firebase:firebase-firestore-ktx:24.8.1")
@@ -55,6 +55,8 @@ dependencies {
    
     implementation("com.google.android.gms:play-services-location:21.0.1")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
+
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
     implementation("com.google.firebase:firebase-auth:22.2.0")
 
     testImplementation("junit:junit:4.13.2")
