@@ -1,12 +1,11 @@
-# Bharat Yatri Sathi
+# Vagabond Voyage
 
 ## Description
 
-**Bharat Yatri Sathi** is an Android app developed as a part of the Smart India Hackathon, offering a unique and exciting way to connect with strangers while providing essential features like an AI chatbot for travel and medical queries, an SOS emergency button, a collection of entertaining mini-games, a messaging feature, and an AI trip planner.
+**Vagabond Voyage** is an Android app developed as a part of the Smart India Hackathon, offering a unique and exciting way to connect with strangers while providing essential features like an AI chatbot for travel and medical queries, an SOS emergency button, a collection of entertaining mini-games, a messaging feature, and an AI trip planner.
 
-![logo](https://github.com/AnshGaur-dev/BYSGitProject/assets/94800583/1932028f-4f70-494f-a5b3-3013d06d03e8)
 
-This project is a part of the Smart India Hackathon, an initiative to promote innovation and problem-solving through technology. **Bharat Yatri Sathi** is designed to foster connections, provide assistance, and enhance travel planning for a smarter and more connected India.
+This project is a part of the Smart India Hackathon, an initiative to promote innovation and problem-solving through technology. **Vagabond Voyage** is designed to foster connections, provide assistance, and enhance travel planning for a smarter and more connected India.
 
 #SIH2023 #SmartIndiaHackathon2023
 
@@ -37,14 +36,14 @@ This project is a part of the Smart India Hackathon, an initiative to promote in
         Multimedia Sharing: Share images, videos, and other media with ease.
         Real-time Chat: Engage in real-time conversations with your friends or strangers.
 
-Thank you for **Bharat Yatri Sathi**, a project developed for the Smart India Hackathon 2023. We hope you enjoy connecting with strangers, making new friends, and efficiently planning your trips with the help of our AI trip planner and other exciting features.
+Thank you for **Vagabond Voyage**, a project developed for the Smart India Hackathon 2023. We hope you enjoy connecting with strangers, making new friends, and efficiently planning your trips with the help of our AI trip planner and other exciting features.
 
    
 ## Technologies Used
 
     Java and Kotlin for Android app development. 
     Firebase for real-time data syncing and user authentication
-    AI and NLP for the chatbot and trip planner functionalities
+    Chat GPT-003 API for Chat bot feature
     Google Maps API for location-based features
     Android SDK for building the app.
     Material design for a sleek and modern user interface
