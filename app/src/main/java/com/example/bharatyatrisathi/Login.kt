@@ -1,30 +1,20 @@
 package com.example.bharatyatrisathi
 
-import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bharatyatrisathi.databinding.ActivityLoginpageBinding
 import com.example.bharatyatrisathi.model.UserModel
 import com.example.bharatyatrisathi.utils.USER_NODE
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.play.core.integrity.e
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthSettings
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -115,10 +105,13 @@ class Login : AppCompatActivity() {
                                 Firebase.firestore.collection(USER_NODE)
                                     .document(Firebase.auth.currentUser!!.uid).set(user)
                                     .addOnSuccessListener {
+                                        Log.e("Google sign in prev" , "prev")
                                          startActivity(Intent(this@Login, Homepage::class.java))
+                                        Log.e("Google sign in prev" , "prev")
                                         finish()
                                     }
                                     .addOnFailureListener {
+                                        Log.e("Google sign in after" , "prev")
                                         Toast.makeText(
                                             this@Login,
                                             task.exception?.localizedMessage,
